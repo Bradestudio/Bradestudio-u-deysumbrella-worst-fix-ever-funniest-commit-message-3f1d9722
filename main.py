@@ -39,8 +39,8 @@ def main():
         sys.exit("entry must open as a fix commit message")
     if "cache the login page" not in text:
         sys.exit("entry must name the fix")
-    if "Dave" not in text:
-        # The punchline must land on the last words: everyone is Dave.
+    if "Dave" not in text or not text.endswith("Dave"):
+        # The punchline must land on the last word: everyone is Dave.
         sys.exit("entry must end with the backfire that everyone is Dave")
     out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR") or "/output"
     os.makedirs(out_dir, exist_ok=True)
